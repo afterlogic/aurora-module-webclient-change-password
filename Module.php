@@ -14,6 +14,8 @@ namespace Aurora\Modules\ChangePasswordWebclient;
  * @license https://afterlogic.com/products/common-licensing Afterlogic Software License
  * @copyright Copyright (c) 2023, Afterlogic Corp.
  *
+ * @property Settings $oModuleSettings
+ *
  * @package Modules
  */
 class Module extends \Aurora\System\Module\AbstractWebclientModule
@@ -48,8 +50,8 @@ class Module extends \Aurora\System\Module\AbstractWebclientModule
         \Aurora\System\Api::checkUserRoleIsAtLeast(\Aurora\System\Enums\UserRole::Anonymous);
 
         return array(
-            'ShowSingleMailChangePasswordInCommonSettings' => $this->getConfig('ShowSingleMailChangePasswordInCommonSettings', false),
-            'ShowSingleMailChangePasswordInSecuritySettings' => $this->getConfig('ShowSingleMailChangePasswordInSecuritySettings', false),
+            'ShowSingleMailChangePasswordInCommonSettings' => $this->oModuleSettings->ShowSingleMailChangePasswordInCommonSettings,
+            'ShowSingleMailChangePasswordInSecuritySettings' => $this->oModuleSettings->ShowSingleMailChangePasswordInSecuritySettings,
         );
     }
     /***** public functions might be called with web API *****/
