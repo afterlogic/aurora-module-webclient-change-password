@@ -124,7 +124,7 @@ CChangePasswordPopup.prototype.onUpdatePasswordResponse = function (oResponse, o
 
 			this.closePopup();
 
-			if ($.isFunction(this.oParams.fAfterPasswordChanged))
+			if (_.isFunction(this.oParams.fAfterPasswordChanged))
 			{
 				this.oParams.fAfterPasswordChanged();
 			}
